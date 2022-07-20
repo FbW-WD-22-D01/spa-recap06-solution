@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event auslösen </title>
+</head>
+<body>
+    <input type="text">
+    <button>Eintragen</button>
+    <ul id="meineListe">
+
+    </ul>
+    <script>
+        //1. Element selektieren
+        const btn = document.querySelector('button')
+        
+        //3. Funktion die durch event ausgelöst wird
+        function clickHandler(e){
+            //Element (input) selektieren
+            const input = document.querySelector('input')
+            
+            //Neues Listenelement erzeugen
+            const liEl = document.createElement('li')
+            
+            //Text aus Input Feld in Listenelement einfügen 
+            liEl.innerText = input.value
+            
+            //Neues Listenelement an die bestehende Liste anhängen
+            document.querySelector('#meineListe').appendChild(liEl)
+            
+            //Eingabe aus input Feld löschen
+            input.value=""
+            
+        }
+        // 2. Click event anlegen und mit Funktion verknüpfen
+        btn.addEventListener('click', clickHandler )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werte auslesen</title>
+</head>
+<body>
+    <form action="#" onsubmit="getFormData(event)">
+        <legend>Login</legend>               
+        <input type="text" name="user" id="inputUser">
+        <label for="inputPw">Password</label>
+        <input type="password" name="password" id="inputPw">
+        <input type="submit" value="Login">
+    </form>
+    
+    <script>
+        function getFormData(e){
+            //Bei Formularen müsst ihr e.preventDefault() verwenden, um ein Neuladen zu verhindern
+            e.preventDefault()
+            
+            //Elemente selektieren
+            const userInput = document.querySelector('#inputUser')
+            const pwInput = document.querySelector('#inputPw')
+            
+            //Werte über Konsole ausgeben
+            console.log('User: ',userInput.value)
+            console.log('Passwort: ', pwInput.value)
+        }
+    
+    </script>
+</body>
+</html>

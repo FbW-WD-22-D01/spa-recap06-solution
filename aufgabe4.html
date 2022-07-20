@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werte auslesen</title>
+<style>
+    main {display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 50px;}
+    img {padding: 10px; border: 3px solid grey; width: 200px;}
+    div { display: flex; flex-flow: row wrap; gap: 10px; justify-content: center;}
+    button {background-color: green; border: none; color: lightcyan; padding: 10px; }
+</style>
+</head>
+<body>
+<main>
+    <div >
+        <img src="https://picsum.photos/200/300?random=1" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=2" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=3" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=4" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=5" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=6" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=7" alt="ein Bild">
+        <img  alt="ein fehlendes Bild">
+        <img src="https://picsum.photos/200/300?random=8" alt="ein Bild">
+        <img src="https://picsum.photos/200/300?random=9" alt="ein Bild">
+    </div>
+    <button onclick="showPic()" >Show Picture</button>
+    </main>
+    <script>
+        //Funktion die durch Button Klick ausgelöst wird
+        function showPic(){
+            //Alle bilder auswählen
+            const img = document.querySelectorAll('img')
+            
+            // Alle Bilder in Schleife durchlaufen
+            img.forEach(el => {
+                //Das Bild suchen, dass kein "src" Attribut hat
+                if (!el.src){
+                    //Dem Bild den fehlenden Link geben
+                    el.src="https://picsum.photos/200/300"
+                } 
+            })
+        }
+    </script>
+</body>
+</html>
